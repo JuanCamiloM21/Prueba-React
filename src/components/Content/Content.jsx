@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDataValue } from '../../contex';
+import Modal from '../Modal/Modal';
 import './Content.scss';
 
 const Content = () => {
@@ -21,21 +22,29 @@ const Content = () => {
     });
   };
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleCloseModal = (e) => {
+    e.preventDefault();
+    setIsOpen(false);
+  };
+
   const send = (e) => {
     e.preventDefault();
     console.log(
-      `Datos enviados: Nombre: ${dataInput.name} EMail: ${dataInput.email} Telefono: ${dataInput.phone} Edad: ${dataInput.age}`
+      `Datos enviados: Nombre: ${dataInput.name} Email: ${dataInput.email} Telefono: ${dataInput.phone} Edad: ${dataInput.age}`
     );
+    setIsOpen(true);
     setDataInput(initialStateValues);
   };
 
   return (
-    <div>
-      <h1>BIENVENIDO</h1>
-      <p>
-        Hola, bienvenido, sabemos que quieres viajar en un{' '}
-        {data !== undefined && data[itemId - 1].name}, por favor diligencia el
-        siguiente formulario:
+    <div className='content'>
+      <h1 className='content-title'>BIENVENIDO</h1>
+      <p className='content-text'>
+        Hola, bienvenido, sabemos que quieres viajar con{' '}
+        <strong>{data !== undefined && data[itemId - 1].name}</strong>, por
+        favor diligencia el siguiente formulario:
       </p>
       <form onSubmit={send}>
         <input
@@ -73,6 +82,9 @@ const Content = () => {
           onChange={handleInput}
         />
         <button type='submit'>Enviar</button>
+        <Modal isOpen={isOpen} onClose={handleCloseModal}>
+          Tu información fue enviada con éxito, estaremos en contacto contigo
+        </Modal>
       </form>
     </div>
   );

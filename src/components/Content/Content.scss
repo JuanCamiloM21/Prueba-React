@@ -1,0 +1,39 @@
+.content {
+  background-color: #008891;
+  margin: auto;
+  border: 1px solid black;
+  border-radius: 0px 0px 50px 30px;
+  padding: 20px;
+  text-align: center;
+
+  input {
+    width: 90%;
+    height: 25px;
+    display: block;
+    margin: 10px auto;
+    border-radius: 3px;
+    border: none;
+    box-shadow: 1px 1px black;
+  }
+
+  button {
+    background-color: #00587a;
+    color: #ffffff;
+    padding: 8px 30px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px black;
+    border: none;
+  }
+
+  @media (max-width: 920px) {
+    border-radius: 0px 10px 10px 0;
+
+    &-title {
+      font-size: 25px;
+    }
+
+    button {
+      padding: 5px 20px;
+    }
+  }
+}

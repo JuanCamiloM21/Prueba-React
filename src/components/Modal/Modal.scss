@@ -1,0 +1,32 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeOut 5s;
+
+  &-container {
+    position: relative;
+    top: 10rem;
+    background-color: #00587a;
+    color: #ffffff;
+    padding: 1rem;
+    width: 200px;
+    animation: fadeOut 5s;
+    border-radius: 5px;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

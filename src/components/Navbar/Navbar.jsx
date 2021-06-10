@@ -6,7 +6,7 @@ const Navbar = () => {
   const { data, handleClick } = useDataValue();
 
   return (
-    <nav>
+    <nav className='navbar'>
       <ul>
         {data?.map((item) => (
           <li key={item.id} onClick={() => handleClick(item.id)}>

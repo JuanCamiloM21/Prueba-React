@@ -1,0 +1,12 @@
+.container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 40%;
+  margin: auto;
+  padding: 30px;
+
+  @media (max-width: 920px) {
+    display: flex;
+    width: 90%;
+    padding: 20px;
+  }
+}
